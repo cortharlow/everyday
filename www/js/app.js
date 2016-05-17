@@ -12,15 +12,13 @@ angular
     $stateProvider
       .state('landing', {
         url: '/',
-        views: {
-          '': {
-            templateUrl: 'views/landing.view.html'
-          },
-          'login@landing': {
-            templateUrl: 'views/login.view.html',
-            controller: 'LoginController as login'
-          }
-        }
+        templateUrl: 'views/landing.view.html',
+        controller: 'LoginController as login'
+      })
+      .state('login', {
+        url: '/login',
+        templateUrl: 'views/login.view.html',
+        controller: 'LoginController as login'
       })
     $urlRouterProvider.otherwise('/');
   })

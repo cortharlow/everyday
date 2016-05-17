@@ -1,11 +1,11 @@
 angular
   .module('everyday.controllers', [])
-  
+
   .controller('LoginController', LoginController)
 
 LoginController.$inject = ['$scope, $state'];
 
-function LoginController($scope, $state) {
+function LoginController($scope, $state, $stateProvider) {
 
   var vm = this;
   vm.getUser = {};
@@ -18,6 +18,10 @@ function LoginController($scope, $state) {
     'email': vm.getUser.email,
     'password': vm.getUser.password
   };
+
+  function login(){
+    $state.go('login');
+  }
 
   $scope.authSuccess = function() {
     // replace dash with the name of your main state
